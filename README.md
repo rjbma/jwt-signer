@@ -73,9 +73,32 @@ Open `http://localhost:8787` and send requests to the worker.
 
 ## Deployment
 
+Deploy to Cloudflare Workers using `wrangler`.
+
+### 1. Authenticate with Cloudflare
+
+Either log in interactively:
+
+```bash
+npx wrangler login
+```
+
+Or set an API token (useful for CI):
+
+```bash
+export CLOUDFLARE_API_TOKEN=<your-token>
+export CLOUDFLARE_ACCOUNT_ID=<your-account-id>
+```
+
+Create a token at https://dash.cloudflare.com/profile/api-tokens using the **Edit Cloudflare Workers** template.
+
+### 2. Deploy
+
 ```bash
 npm run deploy
 ```
+
+The worker will be published to `https://jwt-signer.<your-subdomain>.workers.dev`.
 
 ## Notes
 
