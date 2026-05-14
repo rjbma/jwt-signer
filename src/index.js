@@ -62,7 +62,6 @@ async function generateKey(alg) {
 
 async function signJwt({ header, payload, privateKeyPem }) {
   try {
-    console.log(privateKeyPem)
     const privateKey = await jose.importPKCS8(privateKeyPem, header.alg);
     const jwt = await new jose.SignJWT(payload).setProtectedHeader(header).sign(privateKey);
     return jwt;
