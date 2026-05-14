@@ -56,7 +56,7 @@ async function generateKey(alg) {
   return {
     publicPem,
     privatePem,
-    dpopKeyJwk: publicJwk,
+    publicJwk,
   };
 }
 
